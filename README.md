@@ -1,5 +1,7 @@
 # java-todo
-školní týmový projekt 4.D IIVOS
+team project of class 4.D (2014)
+Institute of Informatics Prague
+www.iivos.cz
 
 TaskManager
 
