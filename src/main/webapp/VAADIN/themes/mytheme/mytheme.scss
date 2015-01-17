@@ -1,0 +1,76 @@
+// Global variable overrides. Must be declared before importing Valo.
+
+// Defines the plaintext font size, weight and family. Font size affects general component sizing.
+//$v-font-size: 16px;
+//$v-font-weight: 300;
+$v-font-family: Arial, Courier, sans-serif;
+
+
+// Defines the border used by all components.
+//$v-border: 1px solid (v-shade 0.7);
+$v-border-radius: 4px;
+
+// Affects the color of some component elements, e.g Button, Panel title, etc
+//$v-background-color: hsl(50, 50%, 98%);
+// Affects the color of content areas, e.g  Panel and Window content, TextField input etc
+//$v-app-background-color: $v-background-color;
+
+// Affects the visual appearance of all components
+//$v-gradient: v-linear 8%;
+//$v-bevel-depth: 30%;
+//$v-shadow-opacity: 5%;
+
+// Defines colors for indicating status (focus, success, failure)
+//$v-focus-color: valo-focus-color(); // Calculates a suitable color automatically
+//$v-friendly-color: #2c9720;
+$v-error-indicator-color: #ed473b;
+
+// For more information, see: https://vaadin.com/book/-/page/themes.valo.html
+// Example variants can be copy/pasted from https://vaadin.com/wiki/-/wiki/Main/Valo+Examples
+
+@import "../valo/valo.scss";
+
+@mixin mytheme {
+    @include valo;
+
+    .v-caption-labeled {
+        font-weight: bold;
+    }
+
+    .appCaption{
+        margin-top: 20px;
+    }
+
+    .applayout{
+        border: solid;
+        border-width: 1px;
+        border-color: #c5c5c5;
+        border-radius: 4px;
+        background-color: white;
+        margin: 12px;
+        padding: 12px; 
+    }
+
+    .appMenulayout{
+        border-bottom-style: solid;
+        border-bottom-color: #c5c5c5; 
+        border-bottom-width: 1px;
+        padding: 4px 0px 8px 0px; 
+    }
+
+    .appHotTasksLayout{
+        margin: 8px 0px 4px 0px;
+        padding: 6px 8px 4px 8px;
+        border-style: solid;
+        border-width: thin;
+        border-color: $v-error-indicator-color;
+        border-radius: $v-border-radius;
+        background-color: lighten($v-error-indicator-color, 40%);
+        cursor: pointer;
+    }	
+
+    .todoInfoLayout{
+        padding: 0px 0px 0px 8px; 
+    }
+
+}
