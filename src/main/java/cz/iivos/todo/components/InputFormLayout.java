@@ -149,7 +149,6 @@ public final class InputFormLayout<T> extends FormLayout {
             sqlContainer.removeAllContainerFilters();
             itemId = sqlContainer.addItem();
             this.item = sqlContainer.getItem(itemId);
-            sqlContainer.getItem(itemId).getItemProperty("title").setValue("název...");
             okCancelListener.obnovFilter();
         } else {
             isNew = false;
@@ -326,6 +325,8 @@ public final class InputFormLayout<T> extends FormLayout {
      */
     public TextField bindTextField(String fn) {
         TextField field = new TextField(fn);
+	field.setNullRepresentation("");
+	field.setInputPrompt("Nadpis...");
         fg.bind(field, fn);
         return field;
     }
@@ -339,6 +340,8 @@ public final class InputFormLayout<T> extends FormLayout {
      */
     public TextArea bindTextArea(String fn) {
         TextArea field = new TextArea(fn);
+	field.setNullRepresentation("");
+	field.setInputPrompt("Text...");
         fg.bind(field, fn);
         return field;
     }

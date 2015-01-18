@@ -13,7 +13,7 @@ import com.vaadin.ui.themes.ValoTheme;
 import cz.iivos.todo.components.UserForm;
 import cz.iivos.todo.model.User;
 import cz.iivos.todo.model.service.EmailService;
-import cz.iivos.todo.model.service.EmailServiceMock;
+import cz.iivos.todo.model.service.EmailServiceImpl;
 import cz.iivos.todo.model.service.UserService;
 import cz.iivos.todo.model.service.UserServiceImpl;
 import cz.iivos.todo.security.SecurityService;
@@ -36,7 +36,7 @@ public class RegisterView extends VerticalLayout implements View {
 	this.navigation = navigation;
 	securityService = new SecurityService();
 	userService = new UserServiceImpl();
-	emailService = new EmailServiceMock();
+	emailService = new EmailServiceImpl();
 	userForm = new UserForm();
 
 	final Button btRegister = new Button("Vytvořit účet", new Button.ClickListener() {

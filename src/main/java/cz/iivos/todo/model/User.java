@@ -1,7 +1,6 @@
 package cz.iivos.todo.model;
 
 import java.io.Serializable;
-
 import java.util.ArrayList;
 import java.util.List;
 import javax.validation.constraints.NotNull;
@@ -37,7 +36,7 @@ public class User implements Serializable {
     
     private boolean admin;
     
-    private List<Task> tasks;
+    private transient List<Task> tasks;
 
     public User() { }
     

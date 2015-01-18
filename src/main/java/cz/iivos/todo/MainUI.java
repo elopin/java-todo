@@ -28,12 +28,12 @@ import cz.iivos.todo.views.UserListView;
 @SuppressWarnings("serial")
 public class MainUI extends UI implements Navigation {
 
-    private Navigator navigator;
-    private SecurityService securityService;
-    private UserService userService;
+    private transient Navigator navigator;
+    private transient SecurityService securityService;
+    private transient UserService userService;
 
     @WebServlet(value = "/*", asyncSupported = true)
-    @VaadinServletConfiguration(productionMode = false, ui = MainUI.class, widgetset = "cz.iivos.todo.AppWidgetSet")
+    @VaadinServletConfiguration(productionMode = true, ui = MainUI.class, widgetset = "cz.iivos.todo.AppWidgetSet")
     public static class Servlet extends VaadinServlet {
     }
 

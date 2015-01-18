@@ -22,7 +22,7 @@ public class NotificationService implements Runnable {
 
     public NotificationService() {
 	taskService = new TaskServiceImpl();
-	emailService = new EmailServiceMock();
+	emailService = new EmailServiceImpl();
     }
 
     @Override

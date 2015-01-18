@@ -86,7 +86,7 @@ public class DBAdapter {
     }
 
     /**
-     * Matoda, která vrací uživatele s hledaným emailem. 
+     * Metoda, která vrací uživatele s hledaným emailem. 
      * @param email email hledaného uživatele.
      * @param deleted příznak, zda se má vyhledat i smazaný uživatel
      * @return vrací hledaného uživatele. *
@@ -553,8 +553,6 @@ public class DBAdapter {
 		st.setBytes(2, security.getEncryptedPassword(password));
 		st.executeUpdate();
 		st.close();
-		admin = getUserByEmail(email, true);
-		confirmUser(admin.getId());
 	    } catch (SQLException ex) {
 		logger.warn(ex.getLocalizedMessage());
 		throw new RuntimeException(ex);
