@@ -13,7 +13,6 @@ import java.util.concurrent.TimeUnit;
 import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 import javax.servlet.annotation.WebListener;
-import org.apache.log4j.Logger;
 
 /**
  * Listener spuštění aplikace na serveru. Inicializuje upozornění na úkoly a
@@ -23,15 +22,12 @@ import org.apache.log4j.Logger;
 @WebListener
 public class TodoServletContextListener implements ServletContextListener {
     
-    private Logger logger;
-    
     private ScheduledExecutorService notification;
     
     private DBAdapter connection;
     
     @Override
     public void contextInitialized(ServletContextEvent sce) {
-	logger = Logger.getLogger(TodoServletContextListener.class);
 	
 	//kontrola účtu admina
 	connection = new DBAdapter();
@@ -52,15 +48,13 @@ public class TodoServletContextListener implements ServletContextListener {
 	
 	Long delay = midnight.getTime() - now.getTime();
 	
-	logger.info("Starting notification service in " + delay + "millis at " + midnight);
+	System.out.println("Starting notification service in " + delay + "millis at " + midnight);
 	notification = Executors.newSingleThreadScheduledExecutor();
 	notification.scheduleAtFixedRate(new NotificationService(), delay, AppConstants.MILLIS_IN_DAY, TimeUnit.MILLISECONDS);
     }
 
     @Override
     public void contextDestroyed(ServletContextEvent sce) {
-	logger.info("Stopping notification service!");
-	notification.shutdownNow();
     }
     
 }

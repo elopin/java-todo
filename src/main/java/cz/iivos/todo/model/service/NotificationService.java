@@ -14,7 +14,7 @@ import org.apache.log4j.Logger;
  */
 public class NotificationService implements Runnable {
 
-    private Logger logger = Logger.getLogger(NotificationService.class);
+    private final Logger logger = Logger.getLogger(NotificationService.class);
     
     private final TaskService taskService;
 

@@ -61,7 +61,7 @@ public class DBAdapter {
 	// nastavení lokálního prostředí
 	Locale locale = new Locale("cz", "CZ");
 	// načtení properties
-	properties = ResourceBundle.getBundle("dbconnection.local",
+	properties = ResourceBundle.getBundle("dbconnection_local",
 		locale);
 	security = new SecurityService();
 

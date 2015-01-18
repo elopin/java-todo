@@ -29,7 +29,7 @@ public class DoDbConn {
 
     static {
         Locale locale = new Locale("cz", "CZ");
-        ResourceBundle properties = ResourceBundle.getBundle("dbconnection",
+        ResourceBundle properties = ResourceBundle.getBundle("dbconnection_local",
             locale);
         connectToDb(JDBC_DRIVER, "jdbc:mysql://" + properties.getString("url")
             + "/" + properties.getString("dbname") + "?useUnicode=true&characterEncoding=UTF8&zeroDateTimeBehavior=convertToNull",
